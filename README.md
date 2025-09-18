@@ -42,12 +42,25 @@ A API expõe os seguintes endpoints:
 
 ## Configuração
 
-A API aceita os seguintes parâmetros:
+A API pode ser configurada através de variáveis de ambiente ou parâmetros na requisição.
+
+### Variáveis de ambiente
+
+Copie o arquivo `.env.example` para `.env` e configure as variáveis:
+
+- `UAZAPI_BASE_URL`: URL da instância UAZAPI (opcional, padrão: https://niochat.uazapi.com)
+- `INSTANCE_TOKEN`: Token da instância UAZAPI (obrigatório para envio de mensagens)
+- `PORT`: Porta da aplicação (opcional, padrão: 5000)
+- `HOST`: Host da aplicação (opcional, padrão: 0.0.0.0)
+
+### Parâmetros da API
+
+A API aceita os seguintes parâmetros nas requisições:
 
 - `number` ou `to`: Número de telefone do destinatário (obrigatório)
 - `text` ou `msg`: Texto da mensagem (obrigatório para mensagens simples)
-- `uazapi_url` ou `uazapi_base_url`: URL da instância UAZAPI (opcional, padrão: https://niochat.uazapi.com)
-- `instance_token` ou `token`: Token da instância UAZAPI (obrigatório)
+- `uazapi_url` ou `uazapi_base_url`: URL da instância UAZAPI (opcional, sobrescreve variável de ambiente)
+- `instance_token` ou `token`: Token da instância UAZAPI (obrigatório, sobrescreve variável de ambiente)
 - `cliente`, `valor`, `linhadigitavel`, `link_pix`, `provedor`: Parâmetros para mensagens interativas
 
 ## Contribuição
